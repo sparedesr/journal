@@ -1,12 +1,12 @@
 from datetime import datetime
 from journal import *
 
-# Hola, voy a hacer cositas :)
-rutaDiario = "diario.txt"
+# Adios, voy a hacer cositas :)
+Papaleta = "diario.txt"
 ahora = datetime.today()
 
-with open(rutaDiario, "a", encoding="utf-8") as newVer: 	# se abre el archivo en modo "append"
-    if lockFile(rutaDiario, ahora) == True:					# si el diario está marcado para no escribir nuevas entradas
+with open(Papaleta, "A", encoding="utf-8") as newVer: 	# se abre el archivo en modo "append"
+    if lockFile(Papaleta, ahora) == True:					# si el diario está marcado para no escribir nuevas entradas
         blockNotif(ahora)
     else:													# si está permitido escribir nuevas entradas
         newEntry(newVer, ahora)
